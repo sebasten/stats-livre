@@ -48,6 +48,9 @@ Vous pouvez aussi modifier le graph Google Chart, mais là ce sera au milieu du 
 ### stats/statistiques.csv
 Un fichier .csv avec une ligne par défaut, pour commencer. Vous le placez où vous voulez tant que ça correspond avec les valeurs de `$stat_fichier` dans les deux fichiers PHP. Je vous recommande, juste avant de lancer votre bouquin, d'éditer la ligne avec la bonne date (au format Ymd tout collé, donc 20191225 pour le 25 décembre 2019 par exemple), afin de ne pas avoir une première valeur trop éloignée des autres sur votre graph).
 
+## Help ?
+Si vous avez encore un doute sur comment utiliser tout ça, ou si vous n'y arrivez pas, n'hésitez pas à m'écrire (<sebastien@delahaye.net>). Je ne garantis pas une réponse rapide ou utile mais je verrai ce que je peux faire.
+
 ## Licence
 MIT License
 Copyright (c) 2019 Sébastien Delahaye <sebastien@delahaye.net>
