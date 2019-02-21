@@ -2,7 +2,7 @@
 J'ai bricolé ce script pour la ressortie de mon ebook *[Call of Duty : les Coulisses d'une usine à succès](https://sebastien.delahaye.net/callofcoulisses/)*. C'est pensé pour mon usage mais peut-être que ça sera utile à d'autres.
 
 ## Qu'est-ce que ça fait ?
-* gère plusieurs formats d'ebook (pdf, epub, azw3) ;
+* gère plusieurs formats d'ebook (pdf, epub, azw3) en téléchargement ;
 * propose des urls propres, quels que soient les noms des fichiers ;
 * permet d'avoir des noms différents sur le serveur et en téléchargement (ainsi vous pouvez uploader votre livrev2_final_fulldef_valide.pdf sur le serveur et le fichier téléchargé s'appellera quand même "Le Guide ultime des guides.pdf") ; 
 * enregistre des stats (minimales) : un compteur par format + un compteur total, le tout par jour ;
