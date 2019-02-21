@@ -1,0 +1,9 @@
+Options +FollowSymlinks 
+
+RewriteEngine On
+RewriteRule ^/?epub/?$ /livre/index.php?redirect=epub [L]
+RewriteRule ^/?web/?$ /livre/index.php?redirect=web [L]
+RewriteRule ^/?azw/?$ /livre/index.php?redirect=azw [L]
+RewriteRule ^/?pdf/?$ /livre/index.php?redirect=pdf [L]
+
+ErrorDocument 404 /livre/index.php?redirect=erreur
