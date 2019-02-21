@@ -45,7 +45,7 @@ C'est le fichier qui permet d'afficher les statistiques. Vous pouvez bien sûr l
 - `$titre` : une coquetterie : le nom de la page de statistiques ("Les stats de mon livre", par exemple).
 Vous pouvez aussi modifier le graph Google Chart, mais là ce sera au milieu du fichier.
 
-### stats/stats.csv
+### stats/statistiques.csv
 Un fichier .csv avec une ligne par défaut, pour commencer. Vous le placez où vous voulez tant que ça correspond avec les valeurs de `$stat_fichier` dans les deux fichiers PHP. Je vous recommande, juste avant de lancer votre bouquin, d'éditer la ligne avec la bonne date (au format Ymd tout collé, donc 20191225 pour le 25 décembre 2019 par exemple), afin de ne pas avoir une première valeur trop éloignée des autres sur votre graph).
 
 ## Licence
