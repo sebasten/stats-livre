@@ -37,11 +37,14 @@
 
 */
 
-// le titre de la page
+// Le titre de la page.
 $titre = "Statistiques : les Coulisses d'une usine à succès";
 
 // Le fichier CSV de statistiques qu'on va interroger.
 $stat_fichier = 'statistiques.csv';
+
+// allumez le feu (active une animation enflammée pour les chiffres de la veille).
+$in_flames = 1;
 
 /*
 	Fin des variables à modifier
@@ -50,7 +53,7 @@ $stat_fichier = 'statistiques.csv';
 
 // 	On vérifie que le fichier existe (sinon on affiche un message d'erreur tip top)
 if (!file_exists($stat_fichier)) {
-	echo "<html><head><title>$titre</title><link href=\"https://fonts.googleapis.com/css?family=Lato:300,400\" rel=\"stylesheet\" /><style>html,body{color:#f29278;margin:0;padding:0;width:100%;height:100%;display:table;}h1{font-family:'Lato',serif;height:100%;text-align:center;vertical-align:middle;display:table-cell;margin:auto;width:100%;}</style></head><body><h1>⚠️ Fichier CSV non trouvé ⚠️</h1></html>";
+	echo "<html><head><title>$titre</title><link href=\"https://fonts.googleapis.com/css?family=Lato:300,400&effect=fire-animation|anaglyph\" rel=\"stylesheet\" /><style>html,body{color:#f29278;margin:0;padding:0;width:100%;height:100%;display:table;}h1{font-family:'Lato',serif;height:100%;text-align:center;vertical-align:middle;display:table-cell;margin:auto;width:100%;}</style></head><body><h1 class=\"font-effect-anaglyph\">⚠️ Fichier CSV introuvable ⚠️</h1></html>";
 	exit;
 }
 
@@ -93,7 +96,7 @@ $penultieme_jour = $stat[$nb_jours-2];
 		<meta charset="utf-8" />
 		<title><?= $titre; ?></title>
 		<meta name="robots" content="noindex, nofollow" />
-		<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Lato:300,400<?= ($in_flames==1?'&effect=fire-animation':''); ?>" rel="stylesheet" />
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		<script type="text/javascript">
 			google.charts.load('current', {'packages':['corechart'], 'language':'fr'});
@@ -224,9 +227,9 @@ $penultieme_jour = $stat[$nb_jours-2];
 					</tr>
 				</table>
 			</div>
-			<div id="hier">
+			<div id="hier"<?= ($in_flames==1?' class="font-effect-fire-animation"':''); ?>>
 				<span>+<?= ($dernier_jour[5]-$penultieme_jour[5]); ?></span>
-				<span>par rapport au précédent jour</span>
+				<span>par rapport au jour précédent</span>
 			</div>
 			</div>
 			<div id="chart">
