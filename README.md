@@ -2,7 +2,7 @@
 J'ai bricolé ce script pour la ressortie de mon ebook *[Call of Duty : les Coulisses d'une usine à succès](https://sebastien.delahaye.net/callofcoulisses/)*. C'est pensé pour mon usage mais peut-être que ça sera utile à d'autres.
 
 ## Qu'est-ce que ça fait ?
-* gère plusieurs formats d'ebook (pdf, epub, azw3) en téléchargement ;
+* gère plusieurs formats d'ebook (pdf, epub, azw3) en téléchargement et permet une redirection vers un site web (wahou) ;
 * propose des urls propres, quels que soient les noms des fichiers ;
 * permet d'avoir des noms différents sur le serveur et en téléchargement (ainsi vous pouvez uploader votre livrev2_final_fulldef_valide.pdf sur le serveur et le fichier téléchargé s'appellera quand même "Le Guide ultime des guides.pdf") ; 
 * enregistre des stats (minimales) : un compteur par format + un compteur total, le tout par jour ;
@@ -46,7 +46,7 @@ C'est le fichier qui permet d'afficher les statistiques. Vous pouvez bien sûr l
 Vous pouvez aussi modifier le graph Google Chart, mais là ce sera au milieu du fichier.
 
 ### stats/statistiques.csv
-Un fichier .csv avec une ligne par défaut, pour commencer. Vous le placez où vous voulez tant que ça correspond avec les valeurs de `$stat_fichier` dans les deux fichiers PHP. Je vous recommande, juste avant de lancer votre bouquin, d'éditer la ligne avec la bonne date (au format Ymd tout collé, donc 20191225 pour le 25 décembre 2019 par exemple), afin de ne pas avoir une première valeur trop éloignée des autres sur votre graph).
+Un fichier .csv avec une ligne par défaut, pour commencer. Vous le placez où vous voulez tant que ça correspond avec les valeurs de `$stat_fichier` dans les deux fichiers PHP. Je vous recommande, juste avant de lancer votre bouquin, d'éditer la ligne avec la bonne date (au format Ymd tout collé, donc 20191225 pour le 25 décembre 2019 par exemple), afin de ne pas avoir une première valeur trop éloignée des autres sur votre graph.
 
 ## Help ?
 Si vous avez encore un doute sur comment utiliser tout ça, ou si vous n'y arrivez pas, n'hésitez pas à m'écrire (<sebastien@delahaye.net>). Je ne garantis pas une réponse rapide ou utile mais je verrai ce que je peux faire.
