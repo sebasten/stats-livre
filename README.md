@@ -6,7 +6,7 @@ J'ai bricolé ce script pour la ressortie de mon ebook *[Call of Duty : les Coul
 * propose des urls propres, quels que soient les noms des fichiers ;
 * permet d'avoir des noms différents sur le serveur et en téléchargement (ainsi vous pouvez uploader votre livrev2_final_fulldef_valide.pdf sur le serveur et le fichier téléchargé s'appellera quand même "Le Guide ultime des guides.pdf") ; 
 * enregistre des stats (minimales) : un compteur par format + un compteur total, le tout par jour ;
-* propose une interface (minimale) de visualisation de ces stats. Exemple : 
+* propose une interface (minimale) de visualisation de ces stats. Exemple de page (aux données fantaisistes) : 
 ![Exemple d'affichage des statistiques](https://sebastien.delahaye.net/callofcoulisses/media/stats-livres.png)
 
 ## Comment ça marche ?
