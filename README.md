@@ -5,7 +5,7 @@ J'ai bricolé ce script pour la ressortie de mon ebook *[Call of Duty : les Coul
 * gère plusieurs formats d'ebook (pdf, epub, azw3) en téléchargement
 * permet une redirection vers un site web (wahou) ;
 * propose des urls propres, quels que soient les noms des fichiers ;
-* permet d'avoir des noms différents sur le serveur et en téléchargement (vous pouvez uploader votre livrev2_final_fulldef_valide.pdf sur le serveur et le fichier téléchargé s'appellera quand même "Le Guide ultime des guides.pdf") ; 
+* permet d'avoir des noms différents sur le serveur et en téléchargement (ainsi vous pouvez uploader sur le serveur votre livrev2_final_fulldef_valide.pdf et le fichier téléchargé s'appellera quand même "Le Guide ultime des guides.pdf") ; 
 * enregistre des stats (minimales) : un compteur par format + un compteur total, le tout par jour ;
 * propose une interface (minimale) de visualisation de ces stats. Exemple de page (aux données fantaisistes) : 
 ![Exemple d'affichage des statistiques](https://sebastien.delahaye.net/callofcoulisses/media/stats-livres.png)
