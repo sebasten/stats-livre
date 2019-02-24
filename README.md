@@ -49,7 +49,7 @@ Vous pouvez aussi modifier le graph Google Chart, mais là ce sera au milieu du 
 ![Exemple de page d'erreur](https://sebastien.delahaye.net/callofcoulisses/media/stats-error.png)
 
 ### stats/statistiques.csv
-Un fichier .csv avec une ligne par défaut, pour commencer. Vous le placez où vous voulez tant que ça correspond avec les valeurs de `$stat_fichier` dans les deux fichiers PHP. Je vous recommande, juste avant de lancer votre bouquin, d'éditer la ligne avec la bonne date (au format Ymd tout collé, donc 20191225 pour le 25 décembre 2019 par exemple), afin de ne pas avoir une première valeur trop éloignée des autres sur votre graph.
+Un fichier .csv avec une ligne par défaut, pour commencer. Vous le placez où vous voulez tant que ça correspond avec les valeurs de `$stat_fichier` dans les deux fichiers PHP. Je vous recommande, juste avant de lancer votre bouquin, d'éditer la ligne avec la date de la veille (au format Ymd tout collé, donc 20191225 pour le 25 décembre 2019 par exemple), afin d'avoir une première valeur à zéro proche des autres sur votre graph.
 
 ### Et après ?
 Après, il suffit de faire la page de votre livre des liens correspondant à ce que vous avez défini. Par exemple, si le script est dans le dossier "livre" et que vous avez défini un pdf, faites un lien vers http://mon.site/livre/pdf/ (ou http://mon.site/livre/mobi/ pour la version Mobi, http://mon.site/livre/epub/ pour la version epub, http://mon.site/livre/web/ pour la redirection, etc. Vous pouvez même en rajouter, le code n'est pas trop complexe).
