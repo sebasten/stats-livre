@@ -107,7 +107,7 @@ $penultieme_jour = $stat[$nb_jours-2];
 				data.addColumn('number', 'web');
 				data.addColumn('number', 'pdf');
 				data.addColumn('number', 'epub');
-				data.addColumn('number', 'azw');
+				data.addColumn('number', 'mobi');
 				data.addColumn('number', 'total');
 				data.addRows([ 
 <?php 
@@ -126,9 +126,9 @@ $penultieme_jour = $stat[$nb_jours-2];
 					$web  = $ligne[1];
 					$pdf = $ligne[2];
 					$epub = $ligne[3];
-					$azw = $ligne[4];
+					$mobi = $ligne[4];
 					$total = $ligne[5];
-					echo "\t\t\t\t\t[new Date($y,$m,$d),$web,$pdf,$epub,$azw,$total],\n";
+					echo "\t\t\t\t\t[new Date($y,$m,$d),$web,$pdf,$epub,$mobi,$total],\n";
 				}
 				?>
 				]);
@@ -222,7 +222,7 @@ $penultieme_jour = $stat[$nb_jours-2];
 						<td><?= $dernier_jour[3]; ?></td>
 					</tr>
 					<tr>
-						<td>azw :</td>
+						<td>mobi :</td>
 						<td><?= $dernier_jour[4]; ?></td>
 					</tr>
 				</table>
