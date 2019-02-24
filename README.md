@@ -2,7 +2,7 @@
 J'ai bricolé ce script pour la ressortie de mon ebook *[Call of Duty : les Coulisses d'une usine à succès](https://sebastien.delahaye.net/callofcoulisses/)*. C'est pensé pour mon usage mais peut-être que ça sera utile à d'autres.
 
 ## Qu'est-ce que ça fait ?
-* gère plusieurs formats d'ebook (pdf, epub, azw3) en téléchargement
+* gère plusieurs formats d'ebook (pdf, epub, mobi) en téléchargement
 * permet une redirection vers un site web (wahou) ;
 * propose des urls propres, quels que soient les noms des fichiers ;
 * permet d'avoir des noms différents sur le serveur et en téléchargement (ainsi même si vous uploadez sur le serveur votre livrev2_final_fulldef_valide.pdf, le fichier téléchargé s'appellera quand même "Le Guide ultime des guides.pdf") ; 
@@ -16,7 +16,7 @@ Il vous faudra un serveur avec PHP et mod_rewrite. Tout ça se découpe en 4 fic
 ### index.php
 C'est le script principal, celui qui gère les téléchargements et qui incrémente les compteurs. Attention, il ne remplace pas votre page d'accueil ! Je conseille de le placer dans un dossier (dans mon cas il se trouve dans /livre/).
 Il faut lui modifier plusieurs variables en début de fichier : 
-- `$pdf`, `$azw`, `$epub` : le nom des fichiers .pdf, .azw3 ou .epub que vous envoyez sur le serveur (si vous ne les utilisez pas tout, ce n'est pas grave, il suffit de ne pas créer de lien vers le format non utilisé) ; 
+- `$pdf`, `$mobi`, `$epub` : le nom des fichiers .pdf, .mobi ou .epub que vous envoyez sur le serveur (si vous ne les utilisez pas tout, ce n'est pas grave, il suffit de ne pas créer de lien vers le format non utilisé) ; 
 - `$filename` : c'est le nom que vous voulez donner au fichier téléchargé **sans l'extension** (par exemple "Le Guide ultime des guides") ; 
 - `$web` : si jamais vous publiez aussi une version web (différente de la page d'accueil de votre livre), c'est là qu'il faut mettre son adresse complète ; 
 - `$url` : l'URL complète où se trouvent vos fichiers sur le serveur mais **sans les fichiers** (par exemple si vous les mettez dans "/livre/downloads/secret/", il faudra mettre "http://mon.site/livre/downloads/secret/") ; 
@@ -32,7 +32,7 @@ Options +FollowSymlinks
 RewriteEngine On
 RewriteRule ^/?epub/?$ /livre/index.php?redirect=epub [L]
 RewriteRule ^/?web/?$ /livre/index.php?redirect=web [L]
-RewriteRule ^/?azw/?$ /livre/index.php?redirect=azw [L]
+RewriteRule ^/?mobi/?$ /livre/index.php?redirect=mobi [L]
 RewriteRule ^/?pdf/?$ /livre/index.php?redirect=pdf [L]
 
 ErrorDocument 404 /livre/index.php?redirect=erreur
@@ -52,7 +52,7 @@ Vous pouvez aussi modifier le graph Google Chart, mais là ce sera au milieu du 
 Un fichier .csv avec une ligne par défaut, pour commencer. Vous le placez où vous voulez tant que ça correspond avec les valeurs de `$stat_fichier` dans les deux fichiers PHP. Je vous recommande, juste avant de lancer votre bouquin, d'éditer la ligne avec la bonne date (au format Ymd tout collé, donc 20191225 pour le 25 décembre 2019 par exemple), afin de ne pas avoir une première valeur trop éloignée des autres sur votre graph.
 
 ### Et après ?
-Après, il suffit de faire la page de votre livre des liens correspondant à ce que vous avez défini. Par exemple, si le script est dans le dossier "livre" et que vous avez défini un pdf, faites un lien vers http://mon.site/livre/pdf/ (ou http://mon.site/livre/azw/ pour la version AZW3, http://mon.site/livre/epub/ pour la version epub, http://mon.site/livre/web/ pour la redirection, etc. Vous pouvez même en rajouter, le code n'est pas trop complexe).
+Après, il suffit de faire la page de votre livre des liens correspondant à ce que vous avez défini. Par exemple, si le script est dans le dossier "livre" et que vous avez défini un pdf, faites un lien vers http://mon.site/livre/pdf/ (ou http://mon.site/livre/mobi/ pour la version Mobi, http://mon.site/livre/epub/ pour la version epub, http://mon.site/livre/web/ pour la redirection, etc. Vous pouvez même en rajouter, le code n'est pas trop complexe).
 
 ## Help ?
 Si vous avez encore un doute sur comment utiliser tout ça, ou si vous n'y arrivez pas, n'hésitez pas à m'écrire (<sebastien@delahaye.net>). Je ne garantis pas une réponse rapide ou utile mais je verrai ce que je peux faire.
