@@ -35,7 +35,7 @@
 
 // les noms (sur le serveur) des fichiers à télécharger
 $pdf = 'exemple.pdf';
-$azw = 'exemple.azw3';
+$azw = 'exemple.mobi';
 $epub = 'exemple.epub';
 
 // le nom (sur le futur disque dur de votre lecteur) du fichier téléchargé
@@ -66,7 +66,7 @@ ini_set('auto_detect_line_endings',TRUE);
 	Prend en argument le fichier CSV et l'incrément pour chaque format.
 
 */
-function statCsv($stat_fichier,$i_web,$i_pdf,$i_epub,$i_azw) {
+function statCsv($stat_fichier,$i_web,$i_pdf,$i_epub,$i_mobi) {
 	$fichier_ligne = 1;
 	$today = date('Ymd');
 
@@ -77,7 +77,7 @@ function statCsv($stat_fichier,$i_web,$i_pdf,$i_epub,$i_azw) {
 			while (($stat_anciennes = fgetcsv($fichier, 1000, ',')) !== FALSE) {
 				if ($fichier_ligne == 1) {
 					// la première ligne c'est les intitulés, on les recrée en début de tableau
-					$stat[] = array('date', 'web','pdf','epub','azw','total');
+					$stat[] = array('date', 'web','pdf','epub','mobi','total');
 					$fichier_ligne++;
 				} else {
 					if ($stat_anciennes[0] == $today) {
@@ -90,14 +90,14 @@ function statCsv($stat_fichier,$i_web,$i_pdf,$i_epub,$i_azw) {
 						if (!empty($stat_anciennes[1])) { $web = $stat_anciennes[1]; }
 						if (!empty($stat_anciennes[2])) { $pdf = $stat_anciennes[2]; }
 						if (!empty($stat_anciennes[3])) { $epub = $stat_anciennes[3]; }
-						if (!empty($stat_anciennes[4])) { $azw = $stat_anciennes[4]; }
+						if (!empty($stat_anciennes[4])) { $mobi = $stat_anciennes[4]; }
 						if (!empty($stat_anciennes[5])) { $total = $stat_anciennes[5]; }
 					} else {
 						// là du coup on stocke les données pour le lendemain, au cas où
 						$web = $stat_anciennes[1];
 						$pdf = $stat_anciennes[2];
 						$epub = $stat_anciennes[3];
-						$azw = $stat_anciennes[4];
+						$mobi = $stat_anciennes[4];
 						$total = $stat_anciennes[5];
 						// et on remplie le tableau
 						$stat[] = array($stat_anciennes[0],
@@ -114,7 +114,7 @@ function statCsv($stat_fichier,$i_web,$i_pdf,$i_epub,$i_azw) {
 							$web+$i_web,
 							$pdf+$i_pdf,
 							$epub+$i_epub,
-							$azw+$i_azw,
+							$mobi+$i_mobi,
 							$total+1);
 			fclose($fichier);
 			// Maintenant qu'on a un beau tableau, on réécrit tout de zéro dans le CSV
@@ -131,7 +131,7 @@ function statCsv($stat_fichier,$i_web,$i_pdf,$i_epub,$i_azw) {
 	Le Redirector 3000 : 
 	- si pas d'argument, ou un mauvais argument -> renvoie vers l'accueil
 	- si web -> redirige vers le web et ajoute 1 aux stats
-	- pdf, epub ou azw, télécharge le fichier dans le bon format et +1 aux stats
+	- pdf, epub ou mobi, télécharge le fichier dans le bon format et +1 aux stats
 
 */
 if (isset($_GET['redirect'])) {
@@ -145,12 +145,12 @@ if (isset($_GET['redirect'])) {
 		header("Content-Transfer-Encoding: Binary");
 		header("Content-disposition: attachment; filename=$filename.pdf");
 		readfile($url.$pdf);
-	} elseif (isset($_GET['redirect']) && $_GET['redirect'] == 'azw') {
+	} elseif (isset($_GET['redirect']) && $_GET['redirect'] == 'mobi') {
 		statCsv($stat_fichier,0,0,0,1);
-		header("Content-Type: application/vnd.amazon.mobi8-ebook");
+		header("Content-Type: application/x-mobipocket-ebook");
 		header("Content-Transfer-Encoding: Binary");
-		header("Content-disposition: attachment; filename=$filename.azw3");
-		readfile($url.$azw);
+		header("Content-disposition: attachment; filename=$filename.mobi");
+		readfile($url.$mobi);
 	} elseif (isset($_GET['redirect']) && $_GET['redirect'] == 'epub') {
 		statCsv($stat_fichier,0,0,1,0);
 		header("Content-Type: application/epub+zip");
