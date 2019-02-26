@@ -1,6 +1,18 @@
 # Un script pour proposer un ebook en téléchargement dans plusieurs formats  avec des stats (minimales)
 J'ai bricolé ce script pour la ressortie de mon ebook *[Call of Duty : les Coulisses d'une usine à succès](https://sebastien.delahaye.net/callofcoulisses/)*. C'est pensé pour mon usage mais peut-être que ça sera utile à d'autres.
 
+## Sommaire
+* [Qu'est-ce que ça fait]()
+* [Comment ça marche ?]()
+  * [index.php]()
+  * [.htaccess]()
+  * [stats/index.php]()
+  * [stats/statistiques.csv]()
+* [Et après ?]()
+* [À l'aide ?!]()
+* [Bonus : faire reconnaître son bouquin par les logiciels bibliographiques]()
+* [Licence](#Licence)
+
 ## Qu'est-ce que ça fait ?
 * gère plusieurs formats d'ebook (pdf, epub, mobi) en téléchargement
 * permet une redirection vers un site web (wahou) ;
@@ -54,9 +66,38 @@ Un fichier .csv avec une ligne par défaut, pour commencer. Vous le placez où v
 ### Et après ?
 Après, il suffit de faire la page de votre livre des liens correspondant à ce que vous avez défini. Par exemple, si le script est dans le dossier "livre" et que vous avez défini un pdf, faites un lien vers http://mon.site/livre/pdf/ (ou http://mon.site/livre/mobi/ pour la version Mobi, http://mon.site/livre/epub/ pour la version epub, http://mon.site/livre/web/ pour la redirection, etc. Vous pouvez même en rajouter, le code n'est pas trop complexe).
 
-## Help ?
+## À l'aide ?!
 Si vous avez encore un doute sur comment utiliser tout ça, ou si vous n'y arrivez pas, n'hésitez pas à m'écrire (<sebastien@delahaye.net>). Je ne garantis pas une réponse rapide ou utile mais je verrai ce que je peux faire.
 
+## Bonus : faire reconnaître son bouquin par les logiciels bibliographiques
+Comment faire pour que Zotero (ou Endnote, Mendeley, etc.) reconnaisse que votre page abrite un livre et le récupère ? Il y a des balises meta pour ça. Une partie de celles [que j'utilise](https://sebastien.delahaye.net/callofcoulisses/) (en plus des balises meta classiques, open graph et twitter) et qui semblent faire le job : 
+```
+<meta name="citation_author" content="Nom, Prénom" />
+<meta name="citation_title" content="Titre" />
+<meta name="citation_online_date" content="2019-03-04" />
+<meta name="citation_publisher" content="éditeur" />
+<meta name="citation_keywords" content="des;tags;pertinents" />
+<meta name="citation_language" content="fr" />
+<meta name="citation_pdf_url" content="URL du PDF !" />
+
+<meta name="dc.title" content="Titre" />
+<meta name="dc.creator" content="Nom, Prénom" />
+<meta name="dc.publisher" content="éditeur" />
+<meta name="dc.format" content="text/html" />
+<meta name="dc.date" content="2019-03-04" />
+<meta name="dc.language" content="fr" />
+<meta name="dc.type" content="book" />
+<meta name="dc.created" content="2019-03-04" />
+<meta name="dc.description" content="Une description." />
+<meta name="dc.subject" content="des;tags;pertinents" />
+<meta name="dc.identifier" scheme="URI" content="une url" />
+<meta name="dc.rights" content="© Prénom Nom, Année et votre licence s'il y en a une" />
+
+<meta name="eprints.title" content="Titre" />
+<meta name="eprints.creators_name" content="Nom, Prénom" />
+<meta name="eprints.type" content="book" />
+<meta name="eprints.datestamp" content="2019-03-04" />
+```
 ## Licence
 MIT License
 Copyright (c) 2019 Sébastien Delahaye <sebastien@delahaye.net>
