@@ -2,15 +2,15 @@
 J'ai bricolé ce script pour la ressortie de mon ebook *[Call of Duty : les Coulisses d'une usine à succès](https://sebastien.delahaye.net/callofcoulisses/)*. C'est pensé pour mon usage mais peut-être que ça sera utile à d'autres.
 
 ## Sommaire
-* [Qu'est-ce que ça fait]()
-* [Comment ça marche ?]()
-  * [index.php]()
-  * [.htaccess]()
-  * [stats/index.php]()
-  * [stats/statistiques.csv]()
-* [Et après ?]()
-* [À l'aide ?!]()
-* [Bonus : faire reconnaître son bouquin par les logiciels bibliographiques]()
+* [Qu'est-ce que ça fait ?](quest-ce-que-ça-fait-)
+* [Comment ça marche ?](#comment-ça-marche-)
+  * [index.php](#indexphp)
+  * [.htaccess](#htaccess)
+  * [stats/index.php](#statsindexphp)
+  * [stats/statistiques.csv](#statsstatistiquescsv)
+* [Et après ?](#et-après-)
+* [À l'aide ?!](#à-laide-)
+* [Bonus : faire reconnaître son bouquin par les logiciels bibliographiques](#bonus--faire-reconnaître-son-bouquin-par-les-logiciels-bibliographiques)
 * [Licence](#Licence)
 
 ## Qu'est-ce que ça fait ?
