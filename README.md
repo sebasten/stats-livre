@@ -70,7 +70,7 @@ Après, il suffit de faire la page de votre livre des liens correspondant à ce 
 Si vous avez encore un doute sur comment utiliser tout ça, ou si vous n'y arrivez pas, n'hésitez pas à m'écrire (<sebastien@delahaye.net>). Je ne garantis pas une réponse rapide ou utile mais je verrai ce que je peux faire.
 
 ## Bonus : faire reconnaître son bouquin par les logiciels bibliographiques
-Comment faire pour que Zotero (ou Endnote, Mendeley, etc.) reconnaisse que votre page abrite un livre et le récupère ? Il y a des balises meta pour ça. Une partie de celles [que j'utilise](https://sebastien.delahaye.net/callofcoulisses/) (en plus des balises meta classiques, open graph et twitter) et qui semblent faire le job : 
+Comment faire pour que Zotero (ou Endnote, Mendeley, etc.) reconnaisse que votre page abrite un livre et le récupère ? Il y a des balises meta pour ça (notamment les balises Highwire Press, Eprints et [Dublin Core](http://dublincore.org/documents/2008/08/04/dc-html/)). Une partie de celles [que j'utilise](https://sebastien.delahaye.net/callofcoulisses/) (en plus des balises meta classiques, open graph et twitter) et qui semblent faire le job : 
 ```
 <meta name="citation_author" content="Nom, Prénom" />
 <meta name="citation_title" content="Titre" />
