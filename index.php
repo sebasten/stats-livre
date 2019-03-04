@@ -143,19 +143,19 @@ if (isset($_GET['redirect'])) {
 		statCsv($stat_fichier,0,1,0,0);
 		header("Content-Type: application/pdf");
 		header("Content-Transfer-Encoding: Binary");
-		header("Content-disposition: attachment; filename=$filename.pdf");
+		header('Content-disposition: attachment; filename="'.$filename.'.pdf"');
 		readfile($url.$pdf);
 	} elseif (isset($_GET['redirect']) && $_GET['redirect'] == 'mobi') {
 		statCsv($stat_fichier,0,0,0,1);
 		header("Content-Type: application/x-mobipocket-ebook");
 		header("Content-Transfer-Encoding: Binary");
-		header("Content-disposition: attachment; filename=$filename.mobi");
+		header('Content-disposition: attachment; filename="'.$filename.'.mobi"');
 		readfile($url.$mobi);
 	} elseif (isset($_GET['redirect']) && $_GET['redirect'] == 'epub') {
 		statCsv($stat_fichier,0,0,1,0);
 		header("Content-Type: application/epub+zip");
 		header("Content-Transfer-Encoding: Binary");
-		header("Content-disposition: attachment; filename=$filename.epub");
+		header('Content-disposition: attachment; filename="'.$filename.'.epub"');
 		readfile($url.$epub);
 	} else {
 		header('Location: '.$home);
